@@ -24,7 +24,7 @@ namespace ImageProcess
             var rectLock = new Rectangle(0, 0, b.Width, b.Height);
             BitmapData bitmapData = b.LockBits(rectLock, ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
             Pixel[,] pxs = null;
-            bitmapData.CopyDataTo(out pxs);             
+            bitmapData.CopyDataTo(out pxs);
             foreach (var filter in _effects)
                 filter.Apply(pxs);
             pxs.CopyDataTo(bitmapData);
