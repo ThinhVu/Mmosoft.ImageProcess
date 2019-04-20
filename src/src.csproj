@@ -43,6 +43,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Channel.cs" />
+    <Compile Include="Effects\Additive.cs" />
     <Compile Include="Effects\BlackWhiteEffect.cs" />
     <Compile Include="Effects\InvertColorEffect.cs" />
     <Compile Include="Effects\MosaicEffect.cs" />
@@ -50,14 +52,11 @@
     <Compile Include="Effects\IImageEffect.cs" />
     <Compile Include="Common\Pixel.cs" />
     <Compile Include="Common\Pixmap.cs" />
+    <Compile Include="Effects\NoiseEffect.cs" />
+    <Compile Include="Effects\ThreeD.cs" />
     <Compile Include="ImageProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics\Histogram.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="sample.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Transforms\" />

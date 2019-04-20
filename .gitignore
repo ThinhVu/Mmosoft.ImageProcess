@@ -2,3 +2,5 @@
 src/obj/**
 src/bin/**
 **.suo
+/test/obj/**
+/test/bin/**
