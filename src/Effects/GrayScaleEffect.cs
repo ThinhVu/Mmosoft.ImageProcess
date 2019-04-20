@@ -13,7 +13,7 @@
                     px = pxs[i, j];
                     grayscale = (byte)(0.299 * px.R + 0.587 * px.G + 0.114 * px.B);
                     px.R = grayscale;
-                    px.R = grayscale;
+                    px.G = grayscale;
                     px.B = grayscale;
                     pxs[i, j] = px;
                 }
