@@ -38,7 +38,7 @@
             this.beforeAfter1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.beforeAfter1.Location = new System.Drawing.Point(0, 0);
             this.beforeAfter1.Name = "beforeAfter1";
-            this.beforeAfter1.Size = new System.Drawing.Size(944, 678);
+            this.beforeAfter1.Size = new System.Drawing.Size(880, 633);
             this.beforeAfter1.TabIndex = 0;
             this.beforeAfter1.Text = "beforeAfter1";
             // 
@@ -46,10 +46,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 678);
+            this.ClientSize = new System.Drawing.Size(880, 633);
             this.Controls.Add(this.beforeAfter1);
-            this.MaximumSize = new System.Drawing.Size(960, 717);
-            this.MinimumSize = new System.Drawing.Size(960, 717);
             this.Name = "EffectPreviewForm";
             this.Text = "Preview";
             this.Load += new System.EventHandler(this.TestForm_Load);

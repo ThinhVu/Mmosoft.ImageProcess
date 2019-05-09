@@ -34,7 +34,7 @@ namespace test
             ip.Add(new ImageProcess.Effects.Additive(Channel.RGB, -20));
             ip.Add(new ImageProcess.Effects.Additive(Channel.R, 80));
             ip.Add(new ImageProcess.Effects.Additive(Channel.G, 40));
-            ip.Add(new ImageProcess.Effects.NoiseEffect(20));
+            //ip.Add(new ImageProcess.Effects.NoiseEffect(20));
             ip.Process(after);
                         
             beforeAfter1.After = after;

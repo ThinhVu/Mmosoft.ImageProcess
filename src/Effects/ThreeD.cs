@@ -20,7 +20,7 @@
             {
                 for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
                 {
-                    pxsc[i, j].G = pxs[i + offset, j].G;
+                    pxsc[i, j].B = pxs[i + offset, j].B;
                     pxsc[i, j].R = pxs[i - offset, j].R;
                 }
             }
