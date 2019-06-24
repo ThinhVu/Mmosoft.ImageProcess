@@ -1,5 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-namespace ImageProcess
+namespace Mmosoft.ImageProcessing
 {
     /// <summary>
     /// A data structure which hold data of RGB color channel
@@ -7,12 +7,14 @@ namespace ImageProcess
     [StructLayout(LayoutKind.Sequential)]
     public struct Pixel
     {
+        public byte A;
         public byte R;
         public byte G;
         public byte B;
 
-        public Pixel(byte b, byte g, byte r)
+        public Pixel(byte a, byte b, byte g, byte r)
         {
+            A = a;
             R = r;
             G = g;
             B = b;

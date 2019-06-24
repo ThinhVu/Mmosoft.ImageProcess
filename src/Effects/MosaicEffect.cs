@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace ImageProcess.Effects
+namespace Mmosoft.ImageProcessing.Effects
 {
     public class MosaicFilterHandler : IImageEffect
     {
@@ -88,6 +88,7 @@ namespace ImageProcess.Effects
             }
 
             // get mid color
+            px.A = 255;
             px.R = (byte)(r / totalPixel);
             px.G = (byte)(g / totalPixel);
             px.B = (byte)(b / totalPixel);

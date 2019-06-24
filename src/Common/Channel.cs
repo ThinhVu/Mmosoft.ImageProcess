@@ -1,5 +1,5 @@
 ﻿
-namespace ImageProcess
+namespace Mmosoft.ImageProcessing
 {
     public enum Channel
     {

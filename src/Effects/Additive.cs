@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ImageProcess.Effects
+namespace Mmosoft.ImageProcessing.Effects
 {
     public class Additive : IImageEffect
     {

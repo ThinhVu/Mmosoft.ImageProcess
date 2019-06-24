@@ -1,4 +1,4 @@
-﻿namespace ImageProcess.Effects
+﻿namespace Mmosoft.ImageProcessing.Effects
 {
     public class ThreeD : IImageEffect
     {

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ImageProcess.Statistics
+namespace Mmosoft.ImageProcessing.Statistics
 {
     public class Histogram
     {

@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ImageProcess;
+using Mmosoft.ImageProcessing;
 
 namespace test
 {
     public partial class EffectPreviewForm : Form
     {
-        ImageProcess.ImageProcess ip = new ImageProcess.ImageProcess();
+        ImageProcess ip = new ImageProcess();
 
         public EffectPreviewForm()
         {
@@ -29,11 +29,11 @@ namespace test
             var after = (Bitmap)Image.FromFile("sample.jpg");
             
             // setup effect
-            ip.Add(new ImageProcess.Effects.GrayScaleFilter());
-            ip.Add(new ImageProcess.Effects.ThreeD());
-            ip.Add(new ImageProcess.Effects.Additive(Channel.RGB, -20));
-            ip.Add(new ImageProcess.Effects.Additive(Channel.R, 80));
-            ip.Add(new ImageProcess.Effects.Additive(Channel.G, 40));
+            ip.Add(new Mmosoft.ImageProcessing.Effects.GrayScaleFilter());
+            ip.Add(new Mmosoft.ImageProcessing.Effects.ThreeD());
+            ip.Add(new Mmosoft.ImageProcessing.Effects.Additive(Channel.RGB, -20));
+            ip.Add(new Mmosoft.ImageProcessing.Effects.Additive(Channel.R, 80));
+            ip.Add(new Mmosoft.ImageProcessing.Effects.Additive(Channel.G, 40));
             //ip.Add(new ImageProcess.Effects.NoiseEffect(20));
             ip.Process(after);
                         

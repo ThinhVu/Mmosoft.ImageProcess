@@ -7,8 +7,8 @@
     <ProjectGuid>{DD0012A4-9E6F-4FF8-949C-C4A12765D392}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImageProcess</RootNamespace>
-    <AssemblyName>ImageProcess</AssemblyName>
+    <RootNamespace>Mmosoft.ImageProcessing</RootNamespace>
+    <AssemblyName>Mmosoft.ImageProcessing</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />

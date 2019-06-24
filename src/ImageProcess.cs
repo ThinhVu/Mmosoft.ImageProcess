@@ -1,9 +1,9 @@
-﻿using ImageProcess.Effects;
+﻿using Mmosoft.ImageProcessing.Effects;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ImageProcess
+namespace Mmosoft.ImageProcessing
 {
     public class ImageProcess
     {
@@ -22,7 +22,7 @@ namespace ImageProcess
         public void Process(Bitmap b)
         {
             var rectLock = new Rectangle(0, 0, b.Width, b.Height);
-            BitmapData bitmapData = b.LockBits(rectLock, ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+            BitmapData bitmapData = b.LockBits(rectLock, ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
             Pixel[,] pxs = null;
             bitmapData.CopyDataTo(out pxs);
             foreach (var filter in _effects)
