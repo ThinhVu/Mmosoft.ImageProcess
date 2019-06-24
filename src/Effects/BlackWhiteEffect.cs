@@ -9,17 +9,17 @@
             _threshold = threshold;
         }
 
-        public void Apply(Pixel[,] pxs)
+        public void Apply(Pixmap pxs)
         {
             new GrayScaleFilter().Apply(pxs);
             Pixel px;
-            for (int scanLine = 0, height = pxs.GetLength(1); scanLine < height; scanLine++)
+            for (int row = 0, height = pxs.Height; row < height; row++)
             {
-                for (int x = 0, width = pxs.GetLength(0); x <  width; x++)
+                for (int col = 0, width = pxs.Width; col <  width; col++)
                 {
-                    px = pxs[x, scanLine];
+                    px = pxs[row, col];
                     px.R = px.G = px.B = (byte)(px.R < _threshold ? 0 : 255);
-                    pxs[x, scanLine] = px;
+                    pxs[row, col] = px;
                 }
             }
         }

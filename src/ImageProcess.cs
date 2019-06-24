@@ -21,14 +21,10 @@ namespace Mmosoft.ImageProcessing
 
         public void Process(Bitmap b)
         {
-            var rectLock = new Rectangle(0, 0, b.Width, b.Height);
-            BitmapData bitmapData = b.LockBits(rectLock, ImageLockMode.ReadWrite, PixelFormat.Format32bppArgb);
-            Pixel[,] pxs = null;
-            bitmapData.CopyDataTo(out pxs);
+            var pxs = new Pixmap(b);
             foreach (var filter in _effects)
                 filter.Apply(pxs);
-            pxs.CopyDataTo(bitmapData);
-            b.UnlockBits(bitmapData);
+            pxs.MoveDataTo(b);
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Mmosoft.ImageProcessing.Effects
 {
@@ -20,18 +18,21 @@ namespace Mmosoft.ImageProcessing.Effects
                 throw new Exception("Invalid noise percentage");            
         }
 
-        public void Apply(Pixel[,] pxs)
+        public void Apply(Pixmap pxs)
         {
-            InitNoise(pxs.GetLength(0) * pxs.GetLength(1));
-            for (int i = 0, iMax = pxs.GetLength(0); i < iMax; i++)
+            InitNoise(pxs.Width * pxs.Height);
+            Pixel px;
+            for (int row = 0, jMax = pxs.Height; row < jMax; row++)
             {
-                for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
+                for (int column = 0, iMax = pxs.Width; column < iMax; column++)
                 {
                     if (ShoudMakeNoise())
                     {
-                        pxs[i, j].R = GetByte(pxs[i, j].R + 30);
-                        pxs[i, j].G = GetByte(pxs[i, j].G + 30);
-                        pxs[i, j].B = GetByte(pxs[i, j].B + 30);
+                        px = pxs[row, column];
+                        px.R = (byte)Math.Max(px.R + 30, 255);
+                        px.G = (byte)Math.Max(px.G + 30, 255);
+                        px.B = (byte)Math.Max(px.B + 30, 255);
+                        pxs[row, column] = px;
                     }
                 }
             }
@@ -70,15 +71,6 @@ namespace Mmosoft.ImageProcessing.Effects
                 _noiseCtr = 0;
             }            
             return _noise[_noiseCtr++];
-        }
-
-        private byte GetByte(int value)
-        {
-            if (value < 0)
-                return 0;
-            if (value > 255)
-                return 255;
-            return (byte)value;
         }
     }
 }

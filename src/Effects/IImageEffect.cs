@@ -6,6 +6,6 @@
         /// Apply special effect for an image
         /// </summary>
         /// <param name="pxs"></param>
-        void Apply(Pixel[,] pxs);
+        void Apply(Pixmap pxs);
     }
 }

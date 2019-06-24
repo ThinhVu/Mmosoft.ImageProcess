@@ -7,12 +7,14 @@ namespace Mmosoft.ImageProcessing
     [StructLayout(LayoutKind.Sequential)]
     public struct Pixel
     {
-        public byte A;
-        public byte R;
-        public byte G;
-        public byte B;
+        public byte A { get; set; }
+        public byte R { get; set; }
+        public byte G { get; set; }
+        public byte B { get; set; }
 
-        public Pixel(byte a, byte b, byte g, byte r)
+        // It's always return in inverse order
+        // So Argb data will be returned as bgra
+        public Pixel(byte b, byte g, byte r, byte a)
         {
             A = a;
             R = r;

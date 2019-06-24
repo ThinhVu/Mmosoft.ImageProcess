@@ -1,21 +1,21 @@
 ﻿namespace Mmosoft.ImageProcessing.Effects
 {
-    public class InvertColorFilterHandler : IImageEffect
+    public class InvertColorEffect : IImageEffect
     {
-        public void Apply(Pixel[,] pxs)
+        public void Apply(Pixmap pxs)
         {
-            int width = pxs.GetLength(0);
-            int height = pxs.GetLength(1);
+            int width = pxs.Width;
+            int height = pxs.Height;
             Pixel px;
-            for (int scanLine = 0; scanLine < height; scanLine++)
+            for (int row = 0; row < height; row++)
             {
-                for (int x = 0; x < width; x++)
+                for (int col = 0; col < width; col++)
                 {
-                    px = pxs[x, scanLine];
+                    px = pxs[row, col];
                     px.R = (byte)(255 - px.R);
                     px.G = (byte)(255 - px.G);
                     px.B = (byte)(255 - px.B);
-                    pxs[x, scanLine] = px;
+                    pxs[row, col] = px;
                 }
             }
         }

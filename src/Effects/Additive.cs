@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Mmosoft.ImageProcessing.Effects
+﻿namespace Mmosoft.ImageProcessing.Effects
 {
     public class Additive : IImageEffect
     {
@@ -16,29 +11,37 @@ namespace Mmosoft.ImageProcessing.Effects
             _value = value;
         }
 
-        public void Apply(Pixel[,] pxs)
+        public void Apply(Pixmap pxs)
         {
-            for (int i = 0, iMax = pxs.GetLength(0); i < iMax; i++)
+            Pixel px;
+
+            for (int col = 0, iMax = pxs.Width; col < iMax; col++)
             {
-                for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
+                for (int row = 0, jMax = pxs.Height; row < jMax; row++)
                 {
+                    px = pxs[row, col];
+
                     switch (_channel)
                     {
+                        case Channel.A:
+                            px.A = GetByte(px.A + _value);
+                            break;
                         case Channel.R:
-                            pxs[i, j].R = GetByte(pxs[i, j].R + _value);
+                            px.R = GetByte(px.R + _value);
                             break;
                         case Channel.G:
-                            pxs[i, j].G = GetByte(pxs[i, j].G + _value);
+                            px.G = GetByte(px.G + _value);
                             break;
                         case Channel.B:
-                            pxs[i, j].B = GetByte(pxs[i, j].B + _value);
+                            px.B = GetByte(px.B + _value);
                             break;
                         case Channel.RGB:
-                            pxs[i, j].R = GetByte(pxs[i, j].R + _value);
-                            pxs[i, j].G = GetByte(pxs[i, j].G + _value);
-                            pxs[i, j].B = GetByte(pxs[i, j].B + _value);
+                            px.R = GetByte(px.R + _value);
+                            px.G = GetByte(px.G + _value);
+                            px.B = GetByte(px.B + _value);
                             break;
                     }
+                    pxs[row, col] = px;
                 }
             }
         }

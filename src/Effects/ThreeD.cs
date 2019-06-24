@@ -2,34 +2,28 @@
 {
     public class ThreeD : IImageEffect
     {
-        public void Apply(Pixel[,] pxs)
+        public void Apply(Pixmap pxs)
         {
             int offset = 3;
 
-            Pixel[,] pxsc = new Pixel[pxs.GetLength(0), pxs.GetLength(1)];
-
-            for (int i = 0, iMax = pxs.GetLength(0); i < iMax; i++)
+            Pixmap pxsc = pxs.DeepCopy();
+            Pixel pxscpx;
+            for (int row = 0, jMax = pxs.Height; row < jMax; row++)
             {
-                for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
+                for (int col = offset, iMax = pxs.Width - offset; col < iMax; col++)
                 {
-                    pxsc[i, j] = pxs[i, j];
+                    pxscpx = pxsc[row, col];
+                    pxscpx.B = pxs[row, col + offset].B;
+                    pxscpx.R = pxs[row, col - offset].R;
+                    pxsc[row, col] = pxscpx;
                 }
             }
 
-            for (int i = offset, iMax = pxs.GetLength(0) - offset; i < iMax; i++)
+            for (int row = 0, jMax = pxs.Height; row < jMax; row++)
             {
-                for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
+                for (int col = 0, iMax = pxs.Width; col < iMax; col++)
                 {
-                    pxsc[i, j].B = pxs[i + offset, j].B;
-                    pxsc[i, j].R = pxs[i - offset, j].R;
-                }
-            }
-
-            for (int i = 0, iMax = pxs.GetLength(0); i < iMax; i++)
-            {
-                for (int j = 0, jMax = pxs.GetLength(1); j < jMax; j++)
-                {
-                    pxs[i, j] = pxsc[i, j];
+                    pxs[row, col] = pxsc[row, col];
                 }
             }
         }
