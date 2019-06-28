@@ -7,10 +7,10 @@ namespace Mmosoft.ImageProcessing
     [StructLayout(LayoutKind.Sequential)]
     public struct Pixel
     {
-        public byte A { get; set; }
-        public byte R { get; set; }
-        public byte G { get; set; }
-        public byte B { get; set; }
+        public byte A;
+        public byte R;
+        public byte G;
+        public byte B;
 
         // It's always return in inverse order
         // So Argb data will be returned as bgra
@@ -24,7 +24,7 @@ namespace Mmosoft.ImageProcessing
 
         public override string ToString()
         {
-            return string.Format("R: {0}, G: {1}, B: {2}", R, G, B);
+            return string.Format("A: {0} R: {1}, G: {2}, B: {3}", A, R, G, B);
         }
     }
 }

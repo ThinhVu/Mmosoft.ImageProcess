@@ -47,6 +47,34 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blends\2_Dissolve\Dissolve.cs" />
+    <Compile Include="Blends\3_Multiply_Screen\HardLight.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Burn\ColorBurn.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Burn\LinearBurn.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Burn\MultiplyBurn.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Dodge\ColorDodge.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Dodge\DivideDodge.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Dodge\LinearDodge.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Dodge\ScreenDodge.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\LInearLight.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\Subtract.cs" />
+    <Compile Include="Blends\4_Dodge_Burn\VividLight.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\Addition.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\DarkenOnly.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\Difference.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\Divide.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\LightenOnly.cs" />
+    <Compile Include="Blends\5_SimpleArithmetic\Subtract.cs" />
+    <Compile Include="Blends\7_Hue_Saturation_Luminosity\Color.cs" />
+    <Compile Include="Blends\7_Hue_Saturation_Luminosity\Hue.cs" />
+    <Compile Include="Blends\7_Hue_Saturation_Luminosity\Luminosity.cs" />
+    <Compile Include="Blends\7_Hue_Saturation_Luminosity\Saturation.cs" />
+    <Compile Include="Blends\IImageBlend.cs" />
+    <Compile Include="Blends\3_Multiply_Screen\Multiply.cs" />
+    <Compile Include="Blends\1_Normal\Normal.cs" />
+    <Compile Include="Blends\3_Multiply_Screen\Overlay.cs" />
+    <Compile Include="Blends\3_Multiply_Screen\Screen.cs" />
+    <Compile Include="Blends\3_Multiply_Screen\SoftLight.cs" />
     <Compile Include="Common\Channel.cs" />
     <Compile Include="Effects\Additive.cs" />
     <Compile Include="Effects\BlackWhiteEffect.cs" />
@@ -63,6 +91,7 @@
     <Compile Include="Statistics\Histogram.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Blends\6_BooleanAritmetic\" />
     <Folder Include="Transforms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
