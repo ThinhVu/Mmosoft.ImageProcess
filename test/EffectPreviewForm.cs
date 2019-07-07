@@ -37,9 +37,10 @@ namespace test
             // ip.Add(new Mmosoft.ImageProcessing.Effects.BlackWhiteFilter(140)); // filter with threshold 140
             // ip.Add(new Mmosoft.ImageProcessing.Effects.GrayScaleFilter()); // make gray image
             // ip.Add(new Mmosoft.ImageProcessing.Effects.InvertColorEffect()); // invert the color
-            // ip.Add(new Mmosoft.ImageProcessing.Effects.MosaicEffect(new Rectangle(0, 0, after.Width, after.Height), 7)); // apply censored 7 pixel for entire image
+            // ip.Add(new Mmosoft.ImageProcessing.Effects.MosaicEffect(new Rectangle(0, 0, 1000, 1000), 7)); // apply censored 7 pixel for entire image
             // ip.Add(new Mmosoft.ImageProcessing.Effects.NoiseEffect(20)); // make a white noise with 20 percentage of an image
             // ip.Add(new Mmosoft.ImageProcessing.Effects.ThreeD()); // make 3D effect
+            ip.Add(new Mmosoft.ImageProcessing.Effects.Blur());
             ip.Process(after);
                         
             beforeAfter1.After = after;

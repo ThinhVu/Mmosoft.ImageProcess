@@ -40,14 +40,33 @@ namespace Mmosoft.ImageProcessing
                 _bitmapData[columnIndex, rowIndex] = value;
             }
         }
-
-        public Pixmap()
+        public Pixel this[int index]
         {
-            _bitmapData = new Pixel[0, 0];
+            get
+            {
+                int row = index / _bitmapData.GetLength(0);
+                int column = index % _bitmapData.GetLength(0);
+                return this[row, column];
+            }
+            set
+            {
+                int row = index / _bitmapData.GetLength(0);
+                int column = index % _bitmapData.GetLength(0);
+                this[row, column] = value;
+            }
+        }
+
+        public Pixmap() : this(0, 0)
+        {
+        }
+
+        public Pixmap(int width, int height)
+        {
+            _bitmapData = new Pixel[width, height];
         }
 
         // internal use for deep copy
-        private Pixmap(Pixel[,] pixelData)
+        public Pixmap(Pixel[,] pixelData)
         {
             int width = pixelData.GetLength(0);
             int height = pixelData.GetLength(1);

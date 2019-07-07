@@ -75,6 +75,8 @@
     <Compile Include="Common\Channel.cs" />
     <Compile Include="Effects\Additive.cs" />
     <Compile Include="Effects\BlackWhiteEffect.cs" />
+    <Compile Include="Effects\Blur.cs" />
+    <Compile Include="Effects\GaussianBlur.cs" />
     <Compile Include="Effects\InvertColorEffect.cs" />
     <Compile Include="Effects\MosaicEffect.cs" />
     <Compile Include="Effects\GrayScaleEffect.cs" />
