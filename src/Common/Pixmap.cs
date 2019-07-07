@@ -1,8 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 
-using Mmosoft.Syntax;
-
 namespace Mmosoft.ImageProcessing
 {
     /// <summary>
@@ -65,12 +63,12 @@ namespace Mmosoft.ImageProcessing
             }
         }
 
-        public Pixmap(NotAllowNull<BitmapData> bitmapData)
+        public Pixmap(BitmapData bitmapData)
         {
             GetDataFrom(bitmapData);
         }
 
-        public Pixmap(NotAllowNull<Bitmap> bitmap)
+        public Pixmap(Bitmap bitmap)
         {
             var bitmapData = LockBits(bitmap);
             GetDataFrom(bitmapData);
@@ -82,7 +80,7 @@ namespace Mmosoft.ImageProcessing
         /// </summary>
         /// <param name="bitmapData"></param>
         /// <param name="pxs"></param>
-        unsafe public void GetDataFrom(NotAllowNull<BitmapData> bitmapDataObject)
+        unsafe public void GetDataFrom(BitmapData bitmapDataObject)
         {
             BitmapData bitmapData = bitmapDataObject;
             _bitmapData = new Pixel[bitmapData.Width, bitmapData.Height];
@@ -104,7 +102,7 @@ namespace Mmosoft.ImageProcessing
         /// </summary>
         /// <param name="data"></param>
         /// <param name="bmData"></param>
-        unsafe public void MoveDataTo(NotAllowNull<BitmapData> bmDataObject)
+        unsafe public void MoveDataTo(BitmapData bmDataObject)
         {
             BitmapData bmData = bmDataObject;
 
@@ -130,7 +128,7 @@ namespace Mmosoft.ImageProcessing
         /// </summary>
         /// <param name="data"></param>
         /// <param name="bmData"></param>
-        unsafe public void MoveDataTo(NotAllowNull<Bitmap> bitmapObject)
+        unsafe public void MoveDataTo(Bitmap bitmapObject)
         {
             Bitmap bitmap = bitmapObject;
             var bitmapData = LockBits(bitmap);

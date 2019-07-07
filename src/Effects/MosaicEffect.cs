@@ -42,7 +42,7 @@ namespace Mmosoft.ImageProcessing.Effects
             if (_top > height) _top = height;
             // area
             if (_left + _width > width) _width = width - _left;
-            if (_top + _height > height) _height = height - _height;
+            if (_top + _height > height) _height = height - _top;
 
             int column = _left, row = _top; // index of pixel
             int endColumn = column + _width, endRow = row + _height;
